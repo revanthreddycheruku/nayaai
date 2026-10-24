@@ -1,0 +1,15 @@
+{
+  "ledger_version": 1,
+  "reviewed_on": "2026-10-24",
+  "note": "Approval is scoped to this exact PDF checksum, the Gazette title/date, and the IRDAI official non-archived listing checked 2026-10-24. It is not a claim that the regulation has no later amendments or overrides; use alongside newer official circulars and verify currentness for each issue.",
+  "sources": [
+    {
+      "source_id": "IN-IRDAI-POLICYHOLDER-REGULATIONS-2024",
+      "download_sha256": "9223b941381edb53dd992505aa19ae5c8501bbc8b366ba254759f51485ca1875",
+      "title_checked": true,
+      "scope_checked": true,
+      "approved_for_legal_context": true,
+      "review_note": "Local PDF title block identifies IRDAI/Reg/11/205/2024, Gazette of India Extraordinary Part III Section 4, dated 22 March 2024; its provisions cover policyholder interests, insurer operations, sales, servicing and grievance redressal. IRDAI official consolidated/gazette index lists this regulation as non-archived as checked 2026-10-24. This permits scoped use of the primary text but does not establish absence of later issue-specific circulars or amendments."
+    }
+  ]
+}

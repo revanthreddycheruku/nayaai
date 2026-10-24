@@ -1,0 +1,102 @@
+{
+  "registry_version": 1,
+  "checked_on": "2026-10-24",
+  "note": "These are official-source discovery links. A URL or source domain does not by itself verify document contents, currentness, or scope. Downloaded materials remain unreviewed until the SHA-256 and extracted title/version are checked and a verification-ledger entry is recorded.",
+  "sources": [
+    {
+      "source_id": "IN-CONSUMER-PROTECTION-ACT-2019",
+      "title": "Consumer Protection Act, 2019",
+      "document_type": "legislation",
+      "issuing_body": "India Code / Government of India",
+      "source_url": "https://www.indiacode.nic.in/indiacode/bitstream/123456789/15256/1/eng201935.pdf",
+      "download_url": "https://consumeraffairs.nic.in/sites/default/files/CP%20Act%202019.pdf",
+      "local_path": "data/raw/official_sources/consumer_protection_act_2019.pdf",
+      "verification_status": "official_source_identified_ingestion_pending",
+      "last_checked": "2026-10-24"
+    },
+    {
+      "source_id": "IN-E-COMMERCE-RULES-2020",
+      "title": "Consumer Protection (E-Commerce) Rules, 2020",
+      "document_type": "regulation",
+      "issuing_body": "Department of Consumer Affairs / Gazette of India",
+      "source_url": "https://consumeraffairs.nic.in/sites/default/files/E%20commerce%20rules.pdf",
+      "download_url": "https://consumeraffairs.nic.in/sites/default/files/E%20commerce%20rules.pdf",
+      "local_path": "data/raw/official_sources/ecommerce_rules_2020.pdf",
+      "verification_status": "official_source_identified_ingestion_pending",
+      "last_checked": "2026-10-24"
+    },
+    {
+      "source_id": "IN-CONSUMER-RULES-INDEX",
+      "title": "Consumer Protection Acts, Rules and Regulations index",
+      "document_type": "official_guidance_index",
+      "issuing_body": "Department of Consumer Affairs, Government of India",
+      "source_url": "https://consumeraffairs.nic.in/acts-and-rules/consumer-protection/consumer-protection",
+      "verification_status": "official_source_identified_ingestion_pending",
+      "last_checked": "2026-10-24"
+    },
+    {
+      "source_id": "IN-E-COMMERCE-CORRIGENDUM-2020",
+      "title": "Corrigendum to the Consumer Protection (E-Commerce) Rules, 2020",
+      "document_type": "regulation_corrigendum",
+      "issuing_body": "Department of Consumer Affairs / Gazette of India",
+      "source_url": "https://consumeraffairs.nic.in/theconsumerprotection/corrigendum-consumer-protection-e-commerce-rules-2020",
+      "verification_status": "official_source_identified_download_link_pending",
+      "last_checked": "2026-10-24"
+    },
+    {
+      "source_id": "IN-E-COMMERCE-AMENDMENT-2021",
+      "title": "Consumer Protection (E-Commerce) (Amendment) Rules, 2021",
+      "document_type": "regulation_amendment",
+      "issuing_body": "Department of Consumer Affairs / Gazette of India",
+      "source_url": "https://consumeraffairs.nic.in/sites/default/files/Consumer%20Protection%20%28E-Commerce%29%20%28Amendment%29%20Rules%2C%202021.pdf",
+      "download_url": "https://consumeraffairs.nic.in/sites/default/files/Consumer%20Protection%20%28E-Commerce%29%20%28Amendment%29%20Rules%2C%202021.pdf",
+      "local_path": "data/raw/official_sources/ecommerce_amendment_2021.pdf",
+      "verification_status": "official_source_identified_ingestion_pending",
+      "last_checked": "2026-10-24"
+    },
+    {
+      "source_id": "IN-NATIONAL-CONSUMER-HELPLINE",
+      "title": "National Consumer Helpline",
+      "document_type": "official_grievance_channel",
+      "issuing_body": "Department of Consumer Affairs, Government of India",
+      "source_url": "https://consumerhelpline.gov.in/public/",
+      "contact_url": "https://consumerhelpline.gov.in/public/contact",
+      "verification_status": "official_source_identified_ingestion_pending",
+      "last_checked": "2026-10-24"
+    },
+    {
+      "source_id": "IN-E-JAGRITI",
+      "title": "e-Jagriti consumer commission portal",
+      "document_type": "official_case_filing_portal",
+      "issuing_body": "Department of Consumer Affairs / National Informatics Centre, Government of India",
+      "source_url": "https://e-jagriti.gov.in/",
+      "help_url": "https://e-jagriti.gov.in/help-docs",
+      "verification_status": "official_source_identified_ingestion_pending",
+      "last_checked": "2026-10-24"
+    },
+    {
+      "source_id": "IN-IRDAI-POLICYHOLDER-REGULATIONS-2024",
+      "title": "IRDAI (Protection of Policyholders' Interests, operations and allied matters of insurers) Regulations, 2024",
+      "document_type": "insurance_regulation",
+      "issuing_body": "Insurance Regulatory and Development Authority of India",
+      "source_url": "https://financialservices.gov.in/sites/default/files/Act-Policies/2026-01/IRDAI--Protection-of--Policyholder-s-Interests--operations-and-allied-matters-of-insurers--Regulations--2024-01.pdf",
+      "regulator_index_url": "https://irdai.gov.in/consolidated-gazette-notified-regulations",
+      "download_url": "https://financialservices.gov.in/sites/default/files/Act-Policies/2026-01/IRDAI--Protection-of--Policyholder-s-Interests--operations-and-allied-matters-of-insurers--Regulations--2024-01.pdf",
+      "local_path": "data/raw/official_sources/irdai_policyholder_regulations_2024.pdf",
+      "grievance_url": "https://irdai.gov.in/about-consumer-affairs",
+      "verification_status": "independently_reviewed_official_primary_text_scope_limited_currentness_check_required",
+      "last_checked": "2026-10-24"
+    },
+    {
+      "source_id": "IN-DGCA-CAR-PASSENGER-REFUND-2026",
+      "title": "DGCA Civil Aviation Requirements document, revision dated 24 February 2026 (candidate passenger refund source)",
+      "document_type": "aviation_regulatory_guidance_candidate",
+      "issuing_body": "Directorate General of Civil Aviation, Government of India",
+      "source_url": "https://www.dgca.gov.in/digigov-portal/Upload?attachId=cuYJ%2FdQQ6Gx93z%2Fwchd5xw%3D%3D&flag=iframeAttachView",
+      "download_url": "https://www.dgca.gov.in/digigov-portal/Upload?attachId=cuYJ%2FdQQ6Gx93z%2Fwchd5xw%3D%3D&flag=iframeAttachView",
+      "local_path": "data/raw/official_sources/dgca_car_2026_candidate.pdf",
+      "verification_status": "official_source_identified_content_and_scope_check_pending",
+      "last_checked": "2026-10-24"
+    }
+  ]
+}
