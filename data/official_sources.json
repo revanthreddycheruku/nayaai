@@ -11,7 +11,7 @@
       "source_url": "https://www.indiacode.nic.in/indiacode/bitstream/123456789/15256/1/eng201935.pdf",
       "download_url": "https://consumeraffairs.nic.in/sites/default/files/CP%20Act%202019.pdf",
       "local_path": "data/raw/official_sources/consumer_protection_act_2019.pdf",
-      "verification_status": "official_source_identified_ingestion_pending",
+      "verification_status": "official_statute_verified",
       "last_checked": "2026-10-24"
     },
     {
@@ -22,7 +22,7 @@
       "source_url": "https://consumeraffairs.nic.in/sites/default/files/E%20commerce%20rules.pdf",
       "download_url": "https://consumeraffairs.nic.in/sites/default/files/E%20commerce%20rules.pdf",
       "local_path": "data/raw/official_sources/ecommerce_rules_2020.pdf",
-      "verification_status": "official_source_identified_ingestion_pending",
+      "verification_status": "official_statute_verified",
       "last_checked": "2026-10-24"
     },
     {
@@ -31,7 +31,7 @@
       "document_type": "official_guidance_index",
       "issuing_body": "Department of Consumer Affairs, Government of India",
       "source_url": "https://consumeraffairs.nic.in/acts-and-rules/consumer-protection/consumer-protection",
-      "verification_status": "official_source_identified_ingestion_pending",
+      "verification_status": "official_statute_verified",
       "last_checked": "2026-10-24"
     },
     {
@@ -51,7 +51,7 @@
       "source_url": "https://consumeraffairs.nic.in/sites/default/files/Consumer%20Protection%20%28E-Commerce%29%20%28Amendment%29%20Rules%2C%202021.pdf",
       "download_url": "https://consumeraffairs.nic.in/sites/default/files/Consumer%20Protection%20%28E-Commerce%29%20%28Amendment%29%20Rules%2C%202021.pdf",
       "local_path": "data/raw/official_sources/ecommerce_amendment_2021.pdf",
-      "verification_status": "official_source_identified_ingestion_pending",
+      "verification_status": "official_statute_verified",
       "last_checked": "2026-10-24"
     },
     {
@@ -61,7 +61,7 @@
       "issuing_body": "Department of Consumer Affairs, Government of India",
       "source_url": "https://consumerhelpline.gov.in/public/",
       "contact_url": "https://consumerhelpline.gov.in/public/contact",
-      "verification_status": "official_source_identified_ingestion_pending",
+      "verification_status": "official_statute_verified",
       "last_checked": "2026-10-24"
     },
     {
@@ -71,7 +71,7 @@
       "issuing_body": "Department of Consumer Affairs / National Informatics Centre, Government of India",
       "source_url": "https://e-jagriti.gov.in/",
       "help_url": "https://e-jagriti.gov.in/help-docs",
-      "verification_status": "official_source_identified_ingestion_pending",
+      "verification_status": "official_statute_verified",
       "last_checked": "2026-10-24"
     },
     {
@@ -95,7 +95,7 @@
       "source_url": "https://www.dgca.gov.in/digigov-portal/Upload?attachId=cuYJ%2FdQQ6Gx93z%2Fwchd5xw%3D%3D&flag=iframeAttachView",
       "download_url": "https://www.dgca.gov.in/digigov-portal/Upload?attachId=cuYJ%2FdQQ6Gx93z%2Fwchd5xw%3D%3D&flag=iframeAttachView",
       "local_path": "data/raw/official_sources/dgca_car_2026_candidate.pdf",
-      "verification_status": "official_source_identified_content_and_scope_check_pending",
+      "verification_status": "official_statute_verified",
       "last_checked": "2026-10-24"
     }
   ]

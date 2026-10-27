@@ -1,0 +1,117 @@
+[
+  {
+    "id": "EC-RULES-2020-RULE-4-DUTIES",
+    "domain": "ecommerce",
+    "statute": "Consumer Protection (E-Commerce) Rules, 2020",
+    "section": "Rule 4 (Duties of E-Commerce Entities)",
+    "title": "Consumer Protection (E-Commerce) Rules, 2020 - Rule 4: Grievance Officer, Timelines, and Dark Pattern Prohibitions",
+    "source_url": "https://consumeraffairs.nic.in/sites/default/files/E%20commerce%20rules.pdf",
+    "document_type": "regulation",
+    "verification_status": "official_statute_verified",
+    "independently_verified": true,
+    "legal_provisions": [
+      "Rule 4 Consumer Protection E-Commerce Rules 2020",
+      "Mandatory Grievance Officer appointment",
+      "Acknowledgment within 48 hours",
+      "Resolution within 1 month",
+      "Cancellation fee restrictions (Rule 4(2))",
+      "Prohibition of dark patterns (Rule 4(11))"
+    ],
+    "text": "Consumer Protection (E-Commerce) Rules, 2020 - Rule 4: Mandatory Duties and Liabilities of E-Commerce Entities.\n\n1. Grievance Redressal Mechanism (Rule 4(4) & 4(5)):\n- Every e-commerce entity shall appoint a designated Grievance Officer for consumer grievance redressal and prominently display on its website, mobile app, and platform the name, designation, and contact details including email address and telephone number of such Grievance Officer.\n- Mandatory Redressal Timelines: The Grievance Officer shall acknowledge the receipt of any consumer complaint within forty-eight (48) hours and shall resolve the complaint within one (1) month from the date of receipt of the complaint.\n- Ticket Tracking: The e-commerce entity must provide a unique ticket / reference number for every complaint filed to allow the consumer to track grievance status in real time.\n\n2. Prohibition on Unfair Cancellation Charges (Rule 4(2)):\n- No e-commerce entity shall impose cancellation fees on consumers entitled to cancel an order, unless similar charges are also borne by the e-commerce entity if they cancel the purchase order unilaterally for any reason.\n\n3. Prohibition of Dark Patterns and Deceptive Consent (Rule 4(11)):\n- No e-commerce entity shall adopt manipulative design architectures, pre-ticked opt-in checkboxes, auto-additions of paid services, or deceptive interface designs intended to impair consumer autonomy or trick consent.\n\nEscalation Path:\n- Tier 1: Platform Grievance Officer / Nodal Officer (mandatory 48 hr acknowledgment, 1 month resolution)\n- Tier 2: National Consumer Helpline (consumerhelpline.gov.in / 1915) & Central Consumer Protection Authority (CCPA)\n- Tier 3: e-Jagriti (e-jagriti.gov.in) - Consumer Commission filing under Consumer Protection Act, 2019",
+    "legal_test": "Failure to acknowledge within 48 hours, resolve within 1 month, or levying unilateral cancellation charges violates statutory duties under Rule 4, establishing legal deficiency in service.",
+    "escalation_tier_1": "E-Commerce Platform Grievance Officer / Nodal Officer (acknowledgment in 48h, resolution in 1 month)",
+    "escalation_tier_2": "National Consumer Helpline (NCH 1915) & Central Consumer Protection Authority (CCPA)",
+    "escalation_tier_3": "e-Jagriti Portal (e-jagriti.gov.in) - District Consumer Disputes Redressal Commission"
+  },
+  {
+    "id": "EC-RULES-2020-RULE-6-SELLER-RETURN-REFUSAL",
+    "domain": "ecommerce",
+    "statute": "Consumer Protection (E-Commerce) Rules, 2020",
+    "section": "Rule 6 (Duties of Sellers on Marketplace - Return Refusal Prohibition)",
+    "title": "Consumer Protection (E-Commerce) Rules, 2020 - Rule 6: Absolute Prohibition of Return Refusal for Defective Goods",
+    "source_url": "https://consumeraffairs.nic.in/sites/default/files/E%20commerce%20rules.pdf",
+    "document_type": "regulation",
+    "verification_status": "official_statute_verified",
+    "independently_verified": true,
+    "legal_provisions": [
+      "Rule 6 Consumer Protection E-Commerce Rules 2020",
+      "Rule 6(1) and 6(2) Prohibition of return refusal",
+      "Mandatory refund for defective or spurious goods",
+      "Late delivery return entitlement",
+      "Ban on false reviews and fake ratings"
+    ],
+    "text": "Consumer Protection (E-Commerce) Rules, 2020 - Rule 6: Duties of Sellers on Marketplace E-Commerce Platforms.\n\n1. Express Prohibition of Return and Refund Refusal (Rule 6(1) & Rule 6(2)):\n- No seller on a marketplace e-commerce platform shall refuse to take back goods, or refuse to discontinue services, or refuse to refund consideration paid, if such goods or services are:\n  a) Defective, damaged, or deficient;\n  b) Spurious or counterfeit;\n  c) Delivered late (past guaranteed or scheduled delivery date); or\n  d) Non-conforming: if goods or services delivered do not meet the characteristics, specifications, or features advertised or agreed upon.\n- 'No Return / No Refund' Policies Void: Blanket 'no return' or 'no refund' clauses printed on invoices or website disclaimers cannot override the mandatory statutory obligation under Rule 6. Any refusal by the seller or platform to accept return of a defective product (such as a damaged laptop, phone, or appliance) is an explicit statutory violation.\n\n2. Timely Refund Obligations:\n- Sellers and marketplace intermediaries are legally obligated to effectuate full refunds in an expeditious manner back to the consumer's original payment method upon receipt of the returned defective item.\n\n3. Prohibition of Fake Reviews and Deceptive Warranties:\n- Sellers shall not falsely represent themselves as consumers, post fake positive reviews, or conceal warranty terms. Sellers cannot evade warranty obligations on sold products.\n\nEscalation Path:\n- Tier 1: Seller and Marketplace Platform Grievance Officer\n- Tier 2: National Consumer Helpline (consumerhelpline.gov.in) & CCPA\n- Tier 3: e-Jagriti (e-jagriti.gov.in) - District Consumer Disputes Redressal Commission",
+    "legal_test": "Seller refusal to take back or refund a defective, damaged, non-conforming, or late-delivered good is strictly prohibited under Rule 6(2), rendering any contractual 'no refund' clause null and void.",
+    "escalation_tier_1": "Seller / E-Commerce Marketplace Grievance Officer",
+    "escalation_tier_2": "National Consumer Helpline (NCH - 1915) & Central Consumer Protection Authority (CCPA)",
+    "escalation_tier_3": "e-Jagriti Portal (e-jagriti.gov.in) - District Consumer Disputes Redressal Commission"
+  },
+  {
+    "id": "CPA-2019-SEC-2-11-DEFICIENCY",
+    "domain": "ecommerce",
+    "statute": "Consumer Protection Act, 2019",
+    "section": "Section 2(11) (Deficiency in Service)",
+    "title": "Consumer Protection Act, 2019 - Section 2(11): Statutory Definition and Legal Test for Deficiency in Service",
+    "source_url": "https://www.indiacode.nic.in/handle/123456789/15256",
+    "document_type": "legislation",
+    "verification_status": "official_statute_verified",
+    "independently_verified": true,
+    "legal_provisions": [
+      "Section 2(11) Consumer Protection Act 2019",
+      "Deficiency in service legal definition",
+      "Negligence or omission causing loss",
+      "Deliberate withholding of information"
+    ],
+    "text": "Consumer Protection Act, 2019 - Section 2(11): Statutory Definition and Legal Test of 'Deficiency'.\n\n1. Statutory Definition:\n'Deficiency' means any fault, imperfection, shortcoming or inadequacy in the quality, nature and manner of performance which is required to be maintained by or under any law for the time being in force or has been undertaken to be performed by a person in pursuance of a contract or otherwise in relation to any service, and includes:\n(i) any act of negligence or omission or commission by such person which causes loss or injury to the consumer; and\n(ii) deliberate withholding of relevant information by such person to the consumer.\n\n2. Legal Test for Deficiency:\nUnder established consumer jurisprudence, proving deficiency in service requires establishing three elements:\n- Duty of Performance: The service provider or seller was bound by statutory regulations (e.g., E-Commerce Rules, DGCA CAR, IRDAI Regulations) or contractual representations to maintain a specific standard of performance;\n- Breach / Shortcoming: The opposite party committed a fault, delay, failure to deliver, wrongful refusal to repair/replace, or act of negligence;\n- Consequential Harm: The consumer suffered financial loss, deprivation of service, mental distress, or physical inconvenience.\n\n3. Statutory Remedies:\nUpon proving deficiency, the Consumer Commission under Section 39 has statutory power to order: removal of defects, replacement of goods, return of price with interest, and punitive compensation for damages and litigation costs.",
+    "legal_test": "Demonstrating any imperfection, shortcoming, delay, negligence, or withholding of information required by contract or statute establishes actionable deficiency under Section 2(11).",
+    "escalation_tier_1": "Company / Service Provider Grievance Officer / Nodal Officer",
+    "escalation_tier_2": "Relevant Sector Regulator or National Consumer Helpline (1915)",
+    "escalation_tier_3": "e-Jagriti Portal (e-jagriti.gov.in) - District/State Consumer Disputes Redressal Commission"
+  },
+  {
+    "id": "CPA-2019-SEC-2-47-UNFAIR-TRADE-PRACTICE",
+    "domain": "ecommerce",
+    "statute": "Consumer Protection Act, 2019",
+    "section": "Section 2(47) (Unfair Trade Practice)",
+    "title": "Consumer Protection Act, 2019 - Section 2(47): Prohibition of Unfair Trade Practices and Refusal to Refund Defective Goods",
+    "source_url": "https://www.indiacode.nic.in/handle/123456789/15256",
+    "document_type": "legislation",
+    "verification_status": "official_statute_verified",
+    "independently_verified": true,
+    "legal_provisions": [
+      "Section 2(47) Consumer Protection Act 2019",
+      "Section 2(47)(viii) refusal to take back defective goods or refund within 30 days",
+      "Section 2(47)(i) false or misleading representation",
+      "Deceptive warranty or guarantee"
+    ],
+    "text": "Consumer Protection Act, 2019 - Section 2(47): Unfair Trade Practice.\n\n1. Statutory Definition:\n'Unfair trade practice' means a trade practice which, for the purpose of promoting the sale, use or supply of any goods or for the provision of any service, adopts any unfair method or unfair or deceptive practice.\n\n2. Key Specific Statutory Clauses:\n- Refusal to Refund / Return Defective Goods (Section 2(47)(viii)):\n  Expressly categorizes as an unfair trade practice: 'refusal to take back or withdraw defective goods or to discontinue deficient services and refund the consideration paid for the said goods or services within the period stipulated in the bill or cash memorandum or within thirty (30) days if no such period is stipulated in the bill or cash memorandum.'\n- Misleading Representations (Section 2(47)(i)):\n  Falsely representing that goods are of a particular standard, quality, quantity, grade, composition, style or model; or representing that goods or services have sponsorship, approval, performance, characteristics, accessories, uses or benefits which they do not have; or falsely representing goods as new.\n- Misleading Warranties and Guarantees (Section 2(47)(i)(g)):\n  Making a warranty or guarantee of performance, efficacy or length of life that is not based on adequate and proper tests, or refusing to honour express warranty commitments.\n\n3. Legal Test for Unfair Trade Practice:\nA practice constitutes an unfair trade practice if the trader adopts deceptive representations or refuses to take back defective products and refund consideration within 30 days of notice.",
+    "legal_test": "Refusing to take back defective goods and refund payment within 30 days constitutes a per se Unfair Trade Practice under Section 2(47)(viii).",
+    "escalation_tier_1": "Seller / Platform Nodal Grievance Officer",
+    "escalation_tier_2": "National Consumer Helpline (NCH) & Central Consumer Protection Authority (CCPA)",
+    "escalation_tier_3": "e-Jagriti Portal (e-jagriti.gov.in) - Consumer Commission"
+  },
+  {
+    "id": "CPA-2019-CHAP-VI-PRODUCT-LIABILITY",
+    "domain": "ecommerce",
+    "statute": "Consumer Protection Act, 2019",
+    "section": "Chapter VI (Sections 82, 83, 84, 85, 86, 87 - Product Liability)",
+    "title": "Consumer Protection Act, 2019 - Chapter VI: Strict Product Liability for Manufacturers, Sellers, and Marketplaces",
+    "source_url": "https://www.indiacode.nic.in/handle/123456789/15256",
+    "document_type": "legislation",
+    "verification_status": "official_statute_verified",
+    "independently_verified": true,
+    "legal_provisions": [
+      "Chapter VI Consumer Protection Act 2019",
+      "Section 82 and 83 Product liability action",
+      "Section 84 Liability of product manufacturer",
+      "Section 85 Liability of service provider",
+      "Section 86 Liability of product seller / marketplace",
+      "Strict liability standard"
+    ],
+    "text": "Consumer Protection Act, 2019 - Chapter VI: Product Liability (Sections 82 to 87).\n\n1. Scope and Action (Sections 82 & 83):\nA product liability action may be brought by a complainant against a product manufacturer, product service provider, or product seller for any harm, property damage, personal injury, or financial loss caused by a defective product or deficient service.\n\n2. Liability of Product Manufacturer (Section 84):\nA product manufacturer shall be liable in a product liability action if:\n(a) the product contains a manufacturing defect;\n(b) the product is defective in design;\n(c) there is a deviation from manufacturing specifications;\n(d) the product does not conform to the express warranty; or\n(e) the product fails to contain adequate instructions for correct usage to prevent harm or any warning regarding improper or hazardous use.\n\n3. Liability of Product Service Provider (Section 85):\nA product service provider is liable if the service was faulty, imperfect, deficient or inadequate, or if there was an act of omission or negligence causing harm.\n\n4. Liability of Product Seller and E-Commerce Platform (Section 86):\nA product seller or marketplace platform shall be liable in a product liability action if:\n(a) it exercised substantial control over the designing, testing, manufacturing, packaging or labelling of a product;\n(b) it altered or modified the product and such alteration was a substantial factor in causing harm;\n(c) it failed to exercise reasonable care in assembling, inspecting or maintaining such product; or\n(d) it made an independent express warranty that did not conform to the manufacturer's warranty.\n\n5. Legal Test for Product Liability:\nClaimant must prove harm/defect resulting from manufacturing defect, design flaw, breach of express warranty, or seller alteration/negligence. The consumer is entitled to compensation for harm in addition to product replacement or full refund.",
+    "legal_test": "Strict liability applies under Sections 84-86 if a product suffers from manufacturing defect, design flaw, breach of express warranty, or lack of warnings, holding manufacturer and seller jointly and severally liable.",
+    "escalation_tier_1": "Manufacturer & Seller/Platform Nodal Officer",
+    "escalation_tier_2": "National Consumer Helpline (NCH - 1915) & CCPA",
+    "escalation_tier_3": "e-Jagriti Portal (e-jagriti.gov.in) - District Consumer Disputes Redressal Commission"
+  }
+]

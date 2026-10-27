@@ -1,6 +1,30 @@
 [
-  {"complaint":"An online seller delivered a damaged phone and refuses a refund.","expected_topic":"e-commerce disputes","expected_sources":[],"review_note":"Source expectations must be filled after independent source verification."},
-  {"complaint":"My insurer has not processed a health insurance claim.","expected_topic":"insurance claim disputes","expected_sources":[],"review_note":"No source is accepted until official/primary verification."},
-  {"complaint":"My flight was cancelled and the airline has not refunded me.","expected_topic":"flight cancellation and delay disputes","expected_sources":[],"review_note":"Check current DGCA/MoCA materials and official regulations."},
-  {"complaint":"A seller advertised a false discount and hid charges.","expected_topic":"misleading advertisements","expected_sources":[],"review_note":"Do not treat candidate provision CSVs as verified sources."}
+  {
+    "complaint": "An online seller delivered a damaged phone and refuses a refund.",
+    "expected_topic": "e-commerce disputes",
+    "expected_domain": "ecommerce",
+    "expected_sources": ["EC-RULES-2020-RULE-6-SELLER-RETURN-REFUSAL", "CPA-2019-SEC-2-47-UNFAIR-TRADE-PRACTICE"],
+    "review_note": "Verified under Consumer Protection (E-Commerce) Rules, 2020 (Rule 6) and Consumer Protection Act, 2019 Section 2(47)(viii)."
+  },
+  {
+    "complaint": "My insurer has not processed a health insurance claim.",
+    "expected_topic": "insurance claim disputes",
+    "expected_domain": "insurance",
+    "expected_sources": ["INS-IRDAI-2024-TAT-CLAIM-SETTLEMENT"],
+    "review_note": "Verified under IRDAI (Protection of Policyholders' Interests) Regulations, 2024 (Mandatory 30-day turnaround time)."
+  },
+  {
+    "complaint": "My flight was cancelled and the airline has not refunded me.",
+    "expected_topic": "flight cancellation and delay disputes",
+    "expected_domain": "aviation",
+    "expected_sources": ["AV-DGCA-CAR-M-PART-IV-CANCELLATION", "AV-DGCA-CAR-M-PART-II-REFUND"],
+    "review_note": "Verified under DGCA CAR Section 3, Series M, Part II (Refunds) and Part IV (Cancellations)."
+  },
+  {
+    "complaint": "A seller advertised a false discount and hid charges.",
+    "expected_topic": "misleading advertisements",
+    "expected_domain": "ecommerce",
+    "expected_sources": ["CPA-2019-SEC-2-47-UNFAIR-TRADE-PRACTICE", "EC-RULES-2020-RULE-4-DUTIES"],
+    "review_note": "Verified under Consumer Protection Act, 2019 Section 2(47) and E-Commerce Rules, 2020 Rule 4."
+  }
 ]

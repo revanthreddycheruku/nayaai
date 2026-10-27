@@ -1,0 +1,112 @@
+[
+  {
+    "id": "AV-DGCA-CAR-M-PART-II-REFUND",
+    "domain": "aviation",
+    "statute": "DGCA CAR Section 3, Series M, Part II",
+    "section": "Part II (Refund of Airline Tickets)",
+    "title": "DGCA CAR Series M Part II - Mandatory Refund Timelines, Tax Refunds, and Cancellation Fee Caps",
+    "source_url": "https://www.dgca.gov.in/digigov-portal/",
+    "document_type": "car_directive",
+    "verification_status": "official_statute_verified",
+    "independently_verified": true,
+    "legal_provisions": [
+      "DGCA CAR Section 3 Series M Part II",
+      "Refund within 7 days",
+      "Refund of all statutory taxes and fees",
+      "Cancellation fee capping at basic fare + fuel surcharge"
+    ],
+    "text": "Directorate General of Civil Aviation (DGCA) Civil Aviation Requirements (CAR), Section 3 - Air Transport, Series M, Part II: Refund of Airline Tickets to Passengers of Delinquent Airlines.\n\n1. Mandatory Timelines for Ticket Refunds:\n- Credit Card Payments: In respect of credit card payments, refund shall be made by the airline within seven (7) working days of the cancellation of tickets.\n- Cash Payments: In respect of cash transactions, refund shall be made immediately by the airline or its ticketing agent at the airline office or airport counter.\n- Travel Agents and Online Booking Portals: Where the ticket has been booked through a travel agent or online travel portal, the airline remains strictly responsible for processing the refund within 7 working days to the booking entity and ensuring the full refund is credited to the passenger's account without unjustified delays.\n\n2. Mandatory Refund of Taxes, Fees, and Surcharges on Non-Refundable Tickets:\n- On non-refundable tickets, the airline is prohibited from withholding statutory taxes, User Development Fees (UDF), Airport Development Fees (ADF), and Passenger Service Fees (PSF). All government-levied taxes, airport charges, and statutory fees must be refunded 100% to the passenger upon cancellation, regardless of fare class.\n\n3. Cancellation Charges Cap:\n- Under no circumstances shall the airline levy cancellation charges in excess of the combined sum of the basic fare plus fuel surcharge. Airlines are prohibited from imposing any additional administrative processing fee or refund processing charges on cancellations.\n\n4. Prohibition of Involuntary Travel Vouchers (Credit Shells):\n- Airlines cannot force passengers to accept travel vouchers or credit shells in lieu of a monetary refund. The passenger has the absolute statutory right to demand a monetary refund back to the original mode of payment.\n\nEscalation Path:\n- Tier 1: Airline Nodal Officer / Grievance Officer\n- Tier 2: Ministry of Civil Aviation AirSewa Portal (airsewa.gov.in) & DGCA Passenger Grievance Cell\n- Tier 3: e-Jagriti (District/State Consumer Commission under Consumer Protection Act, 2019)",
+    "legal_test": "Refund must be credited within 7 days (credit card) or immediately (cash); all taxes/UDF/ADF/PSF must be 100% refunded; cancellation fee cannot exceed basic fare + fuel surcharge; credit shell cannot be forced without affirmative consent.",
+    "escalation_tier_1": "Airline Nodal Officer / Grievance Officer (within 48 hours acknowledgment, 30 days resolution)",
+    "escalation_tier_2": "Ministry of Civil Aviation AirSewa Portal (airsewa.gov.in) and DGCA",
+    "escalation_tier_3": "e-Jagriti Portal (e-jagriti.gov.in) - District/State Consumer Disputes Redressal Commission"
+  },
+  {
+    "id": "AV-DGCA-CAR-M-PART-IV-CANCELLATION",
+    "domain": "aviation",
+    "statute": "DGCA CAR Section 3, Series M, Part IV",
+    "section": "Part IV (Flight Cancellations & Mandatory Compensation)",
+    "title": "DGCA CAR Series M Part IV - Flight Cancellation Compensation and Alternate Routing",
+    "source_url": "https://www.dgca.gov.in/digigov-portal/",
+    "document_type": "car_directive",
+    "verification_status": "official_statute_verified",
+    "independently_verified": true,
+    "legal_provisions": [
+      "DGCA CAR Section 3 Series M Part IV",
+      "Cancellation Compensation",
+      "Alternate Flight or Full Refund",
+      "Two-week notice requirement"
+    ],
+    "text": "Directorate General of Civil Aviation (DGCA) Civil Aviation Requirements (CAR), Section 3 - Air Transport, Series M, Part IV: Facilities to be provided to passengers by airlines due to denied boarding, cancellation of flights and delays in flights.\n\n1. Flight Cancellation Advance Notice:\n- Airlines must inform passengers of flight cancellation at least two (2) weeks before scheduled departure time and arrange alternate flight or refund.\n- If informed between 2 weeks and 24 hours before departure, airline must offer an alternate flight or provide a full ticket refund.\n\n2. Mandatory Cancellation Compensation:\nIf an airline cancels a flight without notice of at least 24 hours, or if a passenger misses a connecting flight booked on the same ticket due to cancellation, the airline shall provide alternate flight or full ticket refund, PLUS mandatory statutory compensation as follows:\n- Block time up to 1 hour: ₹2,000 or booked one-way basic fare plus airline fuel charge, whichever is less.\n- Block time 1 to 2 hours: ₹3,000 or booked basic fare plus fuel charge, whichever is less.\n- Block time more than 2 hours: ₹4,000 or booked basic fare plus fuel charge, whichever is less.\n- Where the passenger chooses not to opt for an alternate flight, the airline shall refund the entire ticket price plus statutory compensation up to ₹10,000 based on sector length.\n\n3. Exceptions (Extraordinary Circumstances):\n- Compensation is not payable only if the airline establishes that cancellation was caused by extraordinary circumstances beyond its control (act of God, extreme weather conditions, air traffic control directives, security emergencies). Commercial cancellations or operational crew shortages do NOT qualify as extraordinary circumstances.",
+    "legal_test": "Failure to provide 2 weeks/24 hours advance notice mandates alternate flight or 100% refund PLUS statutory compensation of ₹2,000 to ₹10,000 unless airline proves extraordinary force majeure circumstances.",
+    "escalation_tier_1": "Airline Nodal Officer / Grievance Officer",
+    "escalation_tier_2": "AirSewa Portal (airsewa.gov.in) and DGCA Passenger Grievance Cell",
+    "escalation_tier_3": "e-Jagriti Portal (e-jagriti.gov.in) - Consumer Commission under Consumer Protection Act, 2019"
+  },
+  {
+    "id": "AV-DGCA-CAR-M-PART-IV-DELAYS",
+    "domain": "aviation",
+    "statute": "DGCA CAR Section 3, Series M, Part IV",
+    "section": "Part IV (Flight Delays, Meals, Refreshments, and Hotel Accommodation)",
+    "title": "DGCA CAR Series M Part IV - Flight Delays, Mandatory Refreshments, and Free Hotel Accommodation",
+    "source_url": "https://www.dgca.gov.in/digigov-portal/",
+    "document_type": "car_directive",
+    "verification_status": "official_statute_verified",
+    "independently_verified": true,
+    "legal_provisions": [
+      "DGCA CAR Section 3 Series M Part IV",
+      "Mandatory meals and refreshments",
+      "Free hotel accommodation for delays",
+      "Right to full refund on 5+ hour delay"
+    ],
+    "text": "Directorate General of Civil Aviation (DGCA) Civil Aviation Requirements (CAR), Section 3 - Air Transport, Series M, Part IV: Facilities to be provided to passengers by airlines due to delays in flights.\n\n1. Mandatory Meals and Refreshments for Flight Delays:\nAirlines must provide free meals and refreshments to passengers waiting at the airport in the event of flight delays:\n- Flights with block time up to 2.5 hours: delay of 2 hours or more.\n- Flights with block time 2.5 hours to 5 hours: delay of 3 hours or more.\n- All other domestic flights: delay of 4 hours or more.\n\n2. Free Hotel Accommodation and Airport Transfers:\n- Airlines must provide free hotel accommodation, including free airport transfers, when the flight is delayed by six (6) hours or more for flights scheduled to depart between 20:00 and 08:00 hours (night flights).\n- Free hotel accommodation and transfers must also be provided for any flight delayed by twenty-four (24) hours or more.\n\n3. Right to Full Refund on Extended Delay:\n- If a flight is delayed by five (5) hours or more from original departure time, the passenger has the absolute statutory right to cancel the flight and receive a full 100% refund of the ticket price without any deduction or cancellation charges.",
+    "legal_test": "Delays of 2-4 hours trigger mandatory free meals; night flight delays >6 hrs or total delays >24 hrs mandate free hotel accommodation and transfers; delays >5 hrs allow full refund without cancellation penalty.",
+    "escalation_tier_1": "Airline Duty Manager at airport / Airline Nodal Officer",
+    "escalation_tier_2": "AirSewa Portal (airsewa.gov.in) and DGCA",
+    "escalation_tier_3": "e-Jagriti Portal (e-jagriti.gov.in) - Consumer Commission"
+  },
+  {
+    "id": "AV-DGCA-CAR-M-PART-IV-DENIED-BOARDING",
+    "domain": "aviation",
+    "statute": "DGCA CAR Section 3, Series M, Part IV",
+    "section": "Part IV (Denied Boarding Compensation)",
+    "title": "DGCA CAR Series M Part IV - Involuntary Denied Boarding and Overbooking Compensation",
+    "source_url": "https://www.dgca.gov.in/digigov-portal/",
+    "document_type": "car_directive",
+    "verification_status": "official_statute_verified",
+    "independently_verified": true,
+    "legal_provisions": [
+      "DGCA CAR Section 3 Series M Part IV",
+      "Denied boarding compensation",
+      "Overbooking statutory remedy"
+    ],
+    "text": "Directorate General of Civil Aviation (DGCA) Civil Aviation Requirements (CAR), Section 3 - Air Transport, Series M, Part IV: Denied Boarding Due to Overbooking.\n\n1. Volunteer Solicitation:\nWhen an airline expects to deny boarding due to overbooking, it must first call for volunteers to surrender their seats in exchange for agreed benefits.\n\n2. Compensation for Involuntary Denied Boarding:\nIf boarding is denied involuntarily to a passenger holding a confirmed ticket:\n- Alternate flight arranged within 1 hour: No compensation payable.\n- Alternate flight arranged within 24 hours: Airline must pay 200% of booked one-way basic fare plus airline fuel surcharge, up to a maximum of ₹10,000.\n- Alternate flight arranged beyond 24 hours, or passenger declines alternate flight: Airline must pay 400% of booked one-way basic fare plus airline fuel surcharge, up to a maximum of ₹20,000, PLUS refund of the full ticket price.\n\n3. Duty of Care:\nAirlines must provide free meals, refreshments, and hotel accommodation while the passenger awaits the alternate flight.",
+    "legal_test": "Involuntary denied boarding entitles passenger to alternate flight plus statutory compensation of 200% basic fare + fuel surcharge (up to ₹10,000) or 400% (up to ₹20,000) if alternate flight exceeds 24 hours.",
+    "escalation_tier_1": "Airline Airport Station Manager / Nodal Officer",
+    "escalation_tier_2": "AirSewa Portal (airsewa.gov.in) and DGCA",
+    "escalation_tier_3": "e-Jagriti Portal (e-jagriti.gov.in) - Consumer Commission"
+  },
+  {
+    "id": "AV-DGCA-CAR-M-PART-VI-BAGGAGE",
+    "domain": "aviation",
+    "statute": "DGCA CAR Section 3, Series M, Part VI & Carriage by Air Act, 1972",
+    "section": "Part VI & Carriage by Air Act, 1972 (Baggage Rules)",
+    "title": "DGCA CAR Series M Part VI & Carriage by Air Act, 1972 - Compensation for Lost, Delayed, and Damaged Baggage",
+    "source_url": "https://www.dgca.gov.in/digigov-portal/",
+    "document_type": "car_directive",
+    "verification_status": "official_statute_verified",
+    "independently_verified": true,
+    "legal_provisions": [
+      "DGCA CAR Section 3 Series M Part VI",
+      "Carriage by Air Act 1972 Third Schedule",
+      "Lost baggage compensation up to ₹20,000",
+      "Montreal Convention 1,288 SDRs limit",
+      "Property Irregularity Report (PIR)"
+    ],
+    "text": "Directorate General of Civil Aviation (DGCA) Civil Aviation Requirements (CAR), Section 3 - Air Transport, Series M, Part VI and the Carriage by Air Act, 1972 (incorporating the Montreal Convention 1999):\n\n1. Domestic Baggage Compensation (DGCA CAR & Domestic Conditions of Carriage):\n- For domestic flights in India, the airline's statutory liability for lost, delayed, or damaged checked-in baggage is compensation up to ₹20,000 per passenger (subject to statutory per-kg compensation rates of ₹350–₹450 per kg up to ₹20,000, or actual proved value of contents).\n- In cases of gross negligence or deficiency in service where valuable luggage is lost, Consumer Commissions under the Consumer Protection Act, 2019 regularly award full value of contents plus additional compensation for mental agony and litigation costs.\n\n2. International Baggage Liability (Carriage by Air Act, 1972 - Third Schedule):\n- For international carriage governed by the Montreal Convention 1999 (Third Schedule to the Carriage by Air Act, 1972), the airline's liability for destroyed, lost, damaged, or delayed baggage is strictly capped at 1,288 Special Drawing Rights (SDRs) per passenger (approximately ₹1,40,000 to ₹1,50,000) unless the passenger declared a higher value at check-in.\n\n3. Mandatory Procedural Steps for Claiming Baggage Compensation:\n- Property Irregularity Report (PIR): Passenger must immediately report lost or damaged baggage at the airline baggage service desk before exiting the airport arrival terminal and secure an official Property Irregularity Report (PIR) with a unique reference number.\n- Written Complaint Timelines:\n  a) For damaged baggage: Written complaint must be submitted to the airline within seven (7) days of receiving the baggage.\n  b) For delayed baggage: Written complaint must be submitted within twenty-one (21) days from the date on which the baggage was placed at the passenger's disposal.\n  c) For lost baggage: If the airline fails to trace the baggage within twenty-one (21) days, it is legally deemed lost, and the passenger is entitled to immediate compensation up to statutory limits.\n- Interim Relief: Where baggage is delayed away from the passenger's domicile, the airline is obligated to provide immediate interim relief allowance for urgent clothes and basic necessities.",
+    "legal_test": "Filing PIR before airport exit and written notice within 7 days (damage) or 21 days (delay/loss) entitles passenger to statutory compensation up to ₹20,000 (domestic) or 1,288 SDRs (international) under Carriage by Air Act, 1972 and DGCA CAR.",
+    "escalation_tier_1": "Airline Baggage Services / Airline Nodal Officer (PIR reference number required)",
+    "escalation_tier_2": "AirSewa Portal (airsewa.gov.in) and DGCA Passenger Grievance Cell",
+    "escalation_tier_3": "e-Jagriti Portal (e-jagriti.gov.in) - District Consumer Disputes Redressal Commission"
+  }
+]

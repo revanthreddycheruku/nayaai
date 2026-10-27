@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: consumer-rights-ai
+    env: python
+    buildCommand: "pip install -r backend/requirements.txt && cd frontend && npm install && npm run build && cd .."
+    startCommand: "uvicorn app.main:app --app-dir backend --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: CHROMA_PATH
+        value: ./vector_store
+      - key: ALLOW_UNVERIFIED_CONTEXT
+        value: "false"

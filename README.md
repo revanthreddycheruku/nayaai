@@ -1,3 +1,13 @@
+---
+title: Consumer Rights AI
+emoji: ⚖️
+colorFrom: green
+colorTo: emerald
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # Consumer Rights AI
 
 An evidence-grounded Indian consumer law assistant with a FastAPI backend, ChromaDB, BGE embeddings, hybrid semantic and keyword retrieval, a configurable LLM, and a React/TypeScript interface.

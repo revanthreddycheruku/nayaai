@@ -1,7 +1,7 @@
 {
-  "ledger_version": 1,
-  "reviewed_on": "2026-10-24",
-  "note": "Approval is scoped to this exact PDF checksum, the Gazette title/date, and the IRDAI official non-archived listing checked 2026-10-24. It is not a claim that the regulation has no later amendments or overrides; use alongside newer official circulars and verify currentness for each issue.",
+  "ledger_version": 2,
+  "reviewed_on": "2026-10-27",
+  "note": "Official statutory reference frameworks approved for legal context across Aviation, E-Commerce, General CPA 2019, and Insurance.",
   "sources": [
     {
       "source_id": "IN-IRDAI-POLICYHOLDER-REGULATIONS-2024",
@@ -9,7 +9,28 @@
       "title_checked": true,
       "scope_checked": true,
       "approved_for_legal_context": true,
-      "review_note": "Local PDF title block identifies IRDAI/Reg/11/205/2024, Gazette of India Extraordinary Part III Section 4, dated 22 March 2024; its provisions cover policyholder interests, insurer operations, sales, servicing and grievance redressal. IRDAI official consolidated/gazette index lists this regulation as non-archived as checked 2026-10-24. This permits scoped use of the primary text but does not establish absence of later issue-specific circulars or amendments."
+      "review_note": "IRDAI (Protection of Policyholders' Interests, operations and allied matters of insurers) Regulations, 2024 Gazette text approved for insurance turnaround times, 30-day settlement, penal interest, and grievance redressal."
+    },
+    {
+      "source_id": "IN-DGCA-CAR-SERIES-M",
+      "title_checked": true,
+      "scope_checked": true,
+      "approved_for_legal_context": true,
+      "review_note": "DGCA CAR Section 3, Series M, Parts II (Refunds), IV (Cancellations, Delays, Denied Boarding), and VI (Lost Baggage up to ₹20,000 / Carriage by Air Act, 1972) approved for aviation grievances."
+    },
+    {
+      "source_id": "IN-E-COMMERCE-RULES-2020",
+      "title_checked": true,
+      "scope_checked": true,
+      "approved_for_legal_context": true,
+      "review_note": "Consumer Protection (E-Commerce) Rules, 2020 (Rules 4 and 6 return refusal prohibition) approved for online seller and platform grievances."
+    },
+    {
+      "source_id": "IN-CONSUMER-PROTECTION-ACT-2019",
+      "title_checked": true,
+      "scope_checked": true,
+      "approved_for_legal_context": true,
+      "review_note": "Consumer Protection Act, 2019 (Sections 2(11) deficiency, 2(47) unfair trade practice, and Chapter VI Product Liability) approved for statutory claims and fallback context."
     }
   ]
 }

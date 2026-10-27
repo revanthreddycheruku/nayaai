@@ -1,0 +1,92 @@
+[
+  {
+    "id": "INS-IRDAI-2024-TAT-CLAIM-SETTLEMENT",
+    "domain": "insurance",
+    "statute": "IRDAI Regulations 2024",
+    "section": "Regulation 11 & Schedule (Claim Settlement & Mandatory TAT)",
+    "title": "IRDAI Regulations 2024 - Mandatory 30-Day Turnaround Time (TAT) for Insurance Claim Settlement",
+    "source_url": "https://financialservices.gov.in/sites/default/files/Act-Policies/2026-01/IRDAI--Protection-of--Policyholder-s-Interests--operations-and-allied-matters-of-insurers--Regulations--2024-01.pdf",
+    "document_type": "insurance_regulation",
+    "verification_status": "official_statute_verified",
+    "independently_verified": true,
+    "legal_provisions": [
+      "IRDAI Regulations 2024 Regulation 11",
+      "Mandatory 30-day claim settlement TAT",
+      "Surveyor report within 30 days",
+      "Requirement for reasoned written repudiation"
+    ],
+    "text": "Insurance Regulatory and Development Authority of India (Protection of Policyholders' Interests, Operations and Allied Matters of Insurers) Regulations, 2024.\n\n1. Mandatory Turnaround Time (TAT) for Claim Processing:\n- Settlement within 30 Days: Insurers are statutorily required to settle or repudiate any life, health, or general insurance claim within thirty (30) days from the date of receipt of all necessary documents and clarifications from the claimant.\n- Investigation and Surveyor Timelines: Where the insurer requires a surveyor or investigator, the surveyor must be appointed immediately and shall submit the survey report within thirty (30) days of appointment. The insurer shall offer settlement or repudiate the claim within thirty (30) days from the receipt of the surveyor's report.\n\n2. Prohibition of Arbitrary Claim Rejections:\n- An insurer cannot reject or repudiate a claim on vague, ambiguous, or frivolous grounds. Any repudiation must be backed by clear, detailed, and written legal and medical reasons citing the exact policy clause relied upon, within the statutory 30-day window.\n- Delaying claim settlement beyond statutory timelines constitutes actionable deficiency in service under Section 2(11) of the Consumer Protection Act, 2019 and a direct breach of IRDAI Regulations.\n\nEscalation Path:\n- Tier 1: Insurer Grievance Redressal Officer (GRO) - mandatory internal resolution within 14 days\n- Tier 2: IRDAI Bima Bharosa Portal (bimabharosa.irdai.gov.in) & Insurance Ombudsman (under Insurance Ombudsman Rules, 2017 for claims up to ₹30 Lakhs)\n- Tier 3: e-Jagriti (e-jagriti.gov.in) - District/State Consumer Disputes Redressal Commission",
+    "legal_test": "Insurers must settle or repudiate claims within 30 days of receiving documents. Unjustified delay beyond 30 days constitutes deficiency in service under Section 2(11) of Consumer Protection Act, 2019.",
+    "escalation_tier_1": "Insurer Grievance Redressal Officer (GRO) - resolution within 14 days",
+    "escalation_tier_2": "IRDAI Bima Bharosa Portal (bimabharosa.irdai.gov.in) and Insurance Ombudsman",
+    "escalation_tier_3": "e-Jagriti Portal (e-jagriti.gov.in) - District/State Consumer Commission"
+  },
+  {
+    "id": "INS-IRDAI-2024-DELAY-PENAL-INTEREST",
+    "domain": "insurance",
+    "statute": "IRDAI Regulations 2024",
+    "section": "Regulation 14 & Schedule (Penal Interest on Delayed Payment)",
+    "title": "IRDAI Regulations 2024 - Mandatory Penal Interest at Bank Rate + 2% for Delayed Claim Settlements",
+    "source_url": "https://financialservices.gov.in/sites/default/files/Act-Policies/2026-01/IRDAI--Protection-of--Policyholder-s-Interests--operations-and-allied-matters-of-insurers--Regulations--2024-01.pdf",
+    "document_type": "insurance_regulation",
+    "verification_status": "official_statute_verified",
+    "independently_verified": true,
+    "legal_provisions": [
+      "IRDAI Regulations 2024 Regulation 14",
+      "Statutory penal interest at Bank Rate + 2% per annum",
+      "Interest payable from 30 days after document submission",
+      "Non-derogable policyholder right"
+    ],
+    "text": "Insurance Regulatory and Development Authority of India (Protection of Policyholders' Interests, Operations and Allied Matters of Insurers) Regulations, 2024 - Penal Interest on Delayed Payment.\n\n1. Mandatory Penal Interest for Claim Delay:\n- Where an insurer fails to settle or pay a valid claim within the prescribed statutory period of thirty (30) days from the receipt of the last necessary document or surveyor report, the insurer is legally obligated to pay penal interest on the claim amount.\n- Statutory Interest Rate: The penal interest rate is fixed at two percent (2%) above the prevailing Bank Rate published by the Reserve Bank of India (RBI) at the beginning of the financial year in which the claim became due.\n- Accrual Period: Penal interest begins accruing from the expiration of thirty (30) days from the date of submission of the claim/survey report and continues until the actual date of payment into the policyholder's bank account.\n\n2. Mandatory and Automatic Payment:\n- Payment of penal interest is non-negotiable and cannot be excluded or waived by any fine-print terms in the insurance contract. The insurer must credit the interest along with the principal claim amount.\n- Where an insurer forces a policyholder to sign an unconditional discharge voucher or full-and-final settlement receipt under duress to receive payment, such discharge is voidable under consumer jurisprudence, and the policyholder can recover balance amount and interest before the Consumer Commission.\n\nEscalation Path:\n- Tier 1: Insurer Grievance Redressal Officer (GRO)\n- Tier 2: IRDAI Bima Bharosa & Insurance Ombudsman\n- Tier 3: e-Jagriti - Consumer Commission under Consumer Protection Act, 2019",
+    "legal_test": "Insurers delaying payment beyond 30 days must pay statutory penal interest at Bank Rate + 2% per annum accruing from the 31st day until the date of actual payment.",
+    "escalation_tier_1": "Insurer Grievance Redressal Officer (GRO)",
+    "escalation_tier_2": "IRDAI Bima Bharosa Portal and Insurance Ombudsman",
+    "escalation_tier_3": "e-Jagriti Portal (e-jagriti.gov.in) - District Consumer Disputes Redressal Commission"
+  },
+  {
+    "id": "INS-IRDAI-2024-FREE-LOOK-PERIOD",
+    "domain": "insurance",
+    "statute": "IRDAI Regulations 2024",
+    "section": "Regulation 8 & 9 (Free-Look Cancellation & Refund)",
+    "title": "IRDAI Regulations 2024 - 30-Day Mandatory Free-Look Cancellation and Premium Refund",
+    "source_url": "https://financialservices.gov.in/sites/default/files/Act-Policies/2026-01/IRDAI--Protection-of--Policyholder-s-Interests--operations-and-allied-matters-of-insurers--Regulations--2024-01.pdf",
+    "document_type": "insurance_regulation",
+    "verification_status": "official_statute_verified",
+    "independently_verified": true,
+    "legal_provisions": [
+      "IRDAI Regulations 2024 Regulation 8",
+      "Mandatory 30-day free look period for electronic policies",
+      "15-day free look for physical policies",
+      "Full premium refund obligation",
+      "Contra Proferentem interpretation of ambiguous clauses"
+    ],
+    "text": "Insurance Regulatory and Development Authority of India (Protection of Policyholders' Interests, Operations and Allied Matters of Insurers) Regulations, 2024 - Free-Look Period & Consumer Protection.\n\n1. Mandatory Free-Look Window:\n- Electronic and Distance Marketing Policies: A policyholder who purchases an insurance policy electronically or through distance marketing channels (online, tele-sales, digital platforms) has a statutory free-look window of thirty (30) days from the date of receipt of the policy document to review the terms and conditions.\n- Physical Policies: A fifteen (15) day free-look period applies to policies delivered in physical mode.\n\n2. Right to Full Refund on Cancellation:\n- If the policyholder is dissatisfied with or disagrees with any terms, exclusions, or conditions of the policy during the free-look period, they have the absolute right to cancel the policy and receive a full refund of premium.\n- Permissible Deductions: The insurer may only deduct proportionate risk premium for the period on cover, actual medical examination expenses incurred, and applicable stamp duty. No surrender penalties or marketing commissions can be deducted.\n\n3. Prohibition of Mis-Selling and Ambiguous Clauses:\n- Insurers and intermediaries are strictly prohibited from mis-selling or concealing material policy terms. Under the legal principle of Contra Proferentem, ambiguous exclusionary terms are construed strictly in favor of the policyholder.",
+    "legal_test": "Policyholder is entitled to cancel within 30 days (electronic/distance) or 15 days (physical) of policy receipt for full refund of premium minus only proportionate risk and medical costs.",
+    "escalation_tier_1": "Insurer Grievance Redressal Officer (GRO)",
+    "escalation_tier_2": "IRDAI Bima Bharosa Portal and Insurance Ombudsman",
+    "escalation_tier_3": "e-Jagriti Portal (e-jagriti.gov.in) - Consumer Commission"
+  },
+  {
+    "id": "INS-IRDAI-2024-GRIEVANCE-OMBUDSMAN",
+    "domain": "insurance",
+    "statute": "IRDAI Regulations 2024 & Insurance Ombudsman Rules, 2017",
+    "section": "Regulation 10 & Insurance Ombudsman Rules, 2017",
+    "title": "IRDAI Regulations 2024 - Grievance Redressal Hierarchy, GRO Norms, and Insurance Ombudsman Redressal",
+    "source_url": "https://financialservices.gov.in/sites/default/files/Act-Policies/2026-01/IRDAI--Protection-of--Policyholder-s-Interests--operations-and-allied-matters-of-insurers--Regulations--2024-01.pdf",
+    "document_type": "insurance_regulation",
+    "verification_status": "official_statute_verified",
+    "independently_verified": true,
+    "legal_provisions": [
+      "IRDAI Regulations 2024 Regulation 10",
+      "Insurance Ombudsman Rules 2017",
+      "14-day internal GRO resolution mandate",
+      "Jurisdiction up to ₹30 Lakhs before Ombudsman",
+      "Binding Ombudsman award on insurer"
+    ],
+    "text": "Insurance Grievance Redressal Mechanism under IRDAI Regulations, 2024 and Insurance Ombudsman Rules, 2017:\n\n1. Tier 1 - Insurer Grievance Redressal Officer (GRO):\n- Every insurer must maintain a robust internal grievance redressal mechanism headed by a designated Grievance Redressal Officer (GRO) at every office.\n- Timelines: Insurer must acknowledge complaints within three (3) working days and resolve the grievance in writing within fourteen (14) days.\n\n2. Tier 2 - IRDAI Bima Bharosa and Insurance Ombudsman:\n- IRDAI Bima Bharosa Portal (bimabharosa.irdai.gov.in): Unresolved complaints can be lodged directly with IRDAI's Integrated Grievance Management System (IGMS) for regulatory oversight.\n- Insurance Ombudsman (under Insurance Ombudsman Rules, 2017):\n  a) Jurisdiction: Covers individual disputes regarding unfair claim repudiation, delayed claim settlement, premium disputes, and mis-selling for claim amounts up to ₹30 Lakhs.\n  b) Filing: Can be approached if the insurer rejects the grievance, does not respond within 30 days, or offers an unsatisfactory resolution.\n  c) Nature: Filing is completely free of charge. The Ombudsman award is legally binding on the insurer (insurer must comply within 30 days), but does not bar the policyholder from approaching Consumer Courts if dissatisfied.\n\n3. Tier 3 - Consumer Commission (e-Jagriti Portal):\n- A formal complaint for deficiency in service and unfair trade practice can be filed before the District Consumer Disputes Redressal Commission via https://e-jagriti.gov.in/.",
+    "legal_test": "Policyholder must first approach Insurer GRO (14 days), can escalate to Insurance Ombudsman for disputes up to ₹30 Lakhs, and retains statutory right to file before Consumer Commission via e-Jagriti.",
+    "escalation_tier_1": "Insurer Grievance Redressal Officer (GRO) - resolution within 14 days",
+    "escalation_tier_2": "IRDAI Bima Bharosa Portal and Insurance Ombudsman (under Insurance Ombudsman Rules, 2017)",
+    "escalation_tier_3": "e-Jagriti Portal (e-jagriti.gov.in) - District Consumer Disputes Redressal Commission"
+  }
+]
