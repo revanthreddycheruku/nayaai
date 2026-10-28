@@ -12,12 +12,18 @@ type Citation = {
   source?: string;
   url?: string;
   link?: string;
+  source_url?: string;
   case_name?: string;
   case_number?: string;
   court?: string;
   year?: number | string;
   snippet?: string;
   text?: string;
+  excerpt?: string;
+  legal_provisions?: string[];
+  verification_status?: string;
+  statute?: string;
+  section?: string;
 };
 
 type Msg = {
@@ -220,7 +226,7 @@ function getCitationTitle(citation: Citation): string {
 }
 
 function getCitationUrl(citation: Citation): string | undefined {
-  const candidate = citation.url ?? citation.link;
+  const candidate = citation.source_url ?? citation.url ?? citation.link;
 
   if (!candidate) return undefined;
 
@@ -787,9 +793,9 @@ export default function App() {
                                 </p>
                               )}
 
-                              {(citation.snippet || citation.text) && (
+                              {(citation.excerpt || citation.snippet || citation.text) && (
                                 <p className="mt-2 leading-5 text-slate-400">
-                                  {citation.snippet ?? citation.text}
+                                  {citation.excerpt ?? citation.snippet ?? citation.text}
                                 </p>
                               )}
                             </li>

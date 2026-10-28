@@ -112,11 +112,15 @@ class Source(BaseModel):
     document_id: str
     title: str
     source_url: str | None = None
+    url: str | None = None
+    link: str | None = None
     document_type: str = "unknown"
     verification_status: str = "unknown"
     legal_provisions: list[str] = Field(default_factory=list)
     paragraph_reference: str | None = None
     excerpt: str = ""
+    snippet: str = ""
+    text: str = ""
     score: float | None = None
     domain: str | None = None
     statute: str | None = None
@@ -143,7 +147,8 @@ class SearchRequest(BaseModel):
 
 
 class DraftRequest(BaseModel):
-    details: dict[str, str] = Field(default_factory=dict)
+    details: dict[str, Any] = Field(default_factory=dict)
+    model_config = {"extra": "allow"}
 
 
 def classify_domain(text: str) -> str:
@@ -1322,11 +1327,15 @@ Cite source labels [S#]."""
             document_id=str(h.get("document_id", "unknown")),
             title=str(h.get("title", "Unknown title")),
             source_url=h.get("source_url"),
+            url=h.get("source_url"),
+            link=h.get("source_url"),
             document_type=str(h.get("document_type", "unknown")),
             verification_status=str(h.get("verification_status", "unknown")),
             legal_provisions=h.get("legal_provisions", []),
             paragraph_reference=h.get("paragraph_reference"),
             excerpt=h.get("excerpt", ""),
+            snippet=h.get("excerpt", "")[:320] + "..." if len(h.get("excerpt", "")) > 320 else h.get("excerpt", ""),
+            text=h.get("excerpt", ""),
             score=h.get("score"),
             domain=h.get("domain"),
             statute=h.get("statute"),
@@ -1339,20 +1348,37 @@ Cite source labels [S#]."""
 
 @app.post("/api/complaint/draft")
 def draft(req: DraftRequest):
-    d = {k: v.strip() for k, v in req.details.items() if isinstance(v, str) and v.strip()}
+    raw = dict(req.details)
+    for k, v in req.model_dump().items():
+        if k != "details" and isinstance(v, str) and v.strip():
+            raw[k] = v.strip()
+
+    d = {k: str(v).strip() for k, v in raw.items() if str(v).strip()}
     if not d:
         raise HTTPException(400, "Provide at least one complaint detail.")
-    get = lambda k: d.get(k, "[Please add]")
+
+    get = lambda k, alt=None: d.get(k) or (d.get(alt) if alt else None) or "[Please add]"
+    company = get("company", "company_name")
+    consumer = get("consumer_name", "name")
+    recipient = d.get("recipient") or d.get("grievance_officer") or (f"Grievance Officer, {company}" if company != "[Please add]" else "[Please add]")
+    product = get("product_or_service", "product")
+    date = get("transaction_date", "date")
+    amount = get("amount")
+    chronology = get("chronology", "issue")
+    remedy = get("remedy_requested", "desired_resolution")
+    evidence = get("evidence", "documents")
+    contact = get("contact_details", "contact")
+
     draft_text = (
-        f"To: {get('recipient')}\n\n"
-        f"Subject: Consumer grievance regarding {get('product_or_service')}\n\n"
+        f"To: {recipient}\n\n"
+        f"Subject: Consumer grievance regarding {product}\n\n"
         f"Dear Sir/Madam,\n\n"
-        f"I, {get('consumer_name')}, am writing about {get('product_or_service')} purchased/used from {get('company')} on {get('transaction_date')}. The amount paid was {get('amount')}.\n\n"
-        f"Chronology and issue:\n{get('chronology')}\n\n"
-        f"I request the following resolution: {get('remedy_requested')}.\n\n"
-        f"Supporting documents: {get('evidence')}\n\n"
+        f"I, {consumer}, am writing about {product} purchased/used from {company} on {date}. The amount paid was {amount}.\n\n"
+        f"Chronology and issue:\n{chronology}\n\n"
+        f"I request the following resolution: {remedy}.\n\n"
+        f"Supporting documents: {evidence}\n\n"
         f"Please acknowledge this grievance and respond in writing.\n\n"
-        f"Sincerely,\n{get('consumer_name')}\n{get('contact_details')}\n\n"
+        f"Sincerely,\n{consumer}\n{contact}\n\n"
         f"Draft for your review. Replace bracketed prompts and confirm every factual statement before use."
     )
     return {
