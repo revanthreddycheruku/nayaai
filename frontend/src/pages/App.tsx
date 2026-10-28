@@ -18,7 +18,23 @@ type Msg = {
 
 type Details = Record<string, string>;
 
-const API = import.meta.env.VITE_API_URL || (typeof window !== 'undefined' ? `${window.location.protocol}//${window.location.hostname}:8000` : 'http://127.0.0.1:8000');
+function getApiUrl(): string {
+  if (import.meta.env.VITE_API_URL) {
+    return import.meta.env.VITE_API_URL.replace(/\/+$/, '');
+  }
+  if (typeof window !== 'undefined') {
+    // If running under local Vite dev server (port 5173), route to local backend on port 8000
+    if (window.location.port === '5173') {
+      return `${window.location.protocol}//${window.location.hostname}:8000`;
+    }
+    // In production (Render, Hugging Face, or mobile browser accessing the deployed app),
+    // the frontend and backend are hosted on the same origin (no port 8000!)
+    return window.location.origin;
+  }
+  return 'http://127.0.0.1:8000';
+}
+
+const API = getApiUrl();
 
 const examples = [
   'An online seller delivered a damaged phone and is refusing a refund.',
@@ -240,7 +256,12 @@ export default function App() {
       if (!r.ok) throw new Error(data.detail || 'The service could not answer.');
       setMessages([...next, { role: 'assistant', text: data.answer, citations: data.citations || [] }]);
     } catch (e) {
-      setError(e instanceof Error ? e.message : 'Could not connect to the API.');
+      const msg = e instanceof Error ? e.message : 'Could not connect to the API.';
+      if (msg.toLowerCase().includes('failed to fetch')) {
+        setError('Unable to reach server. If using Render free tier, the server may be waking up from sleep (takes ~30-50s) — please wait a moment and try again.');
+      } else {
+        setError(msg);
+      }
     } finally {
       setBusy(false);
     }
@@ -259,7 +280,12 @@ export default function App() {
       setDraft(d.draft);
       setShowDraft(true);
     } catch (e) {
-      setError(e instanceof Error ? e.message : 'Draft generation failed.');
+      const msg = e instanceof Error ? e.message : 'Draft generation failed.';
+      if (msg.toLowerCase().includes('failed to fetch')) {
+        setError('Unable to reach server. Please wait a moment while the server wakes up and try again.');
+      } else {
+        setError(msg);
+      }
     }
   }
 
