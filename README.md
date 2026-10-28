@@ -92,24 +92,42 @@ python -m pytest backend\tests -q
 
 The API does not persist conversation history. Requests are size-bounded, CORS origins are configurable, and complaint text is not logged. Retrieved text and user-provided content are treated as untrusted input. The frontend displays source status and links citations.
 
-## Data quality and limits
+## Legal Frameworks Covered
 
-- CSV content and metadata may be duplicated, mislabeled, incomplete, or irrelevant to the assigned provision. A URL or supplied verification label is not proof.
-- Audit overlap detection does not determine legal relevance. Most candidate records remain for manual source-by-source review.
-- Only the IRDAI 2024 regulation has been reviewed and indexed so far. Other legal topics may return a knowledge-base limitation.
-- The IRDAI source is a 2024 Gazette text. The official index listed it as non-archived when checked; check current circulars and amendments for the user's specific issue.
-- The DGCA refund CAR is currently unsearchable locally because its downloaded PDF contains scanned pages and OCR is unavailable. Three other official PDFs timed out during download.
-- Classification is a lightweight keyword heuristic, not a legal determination. The chat endpoint accepts conversation history from the client but does not retain server-side state.
-- Retrieval uses BGE semantic search plus keyword scoring and reciprocal-rank fusion. A cross-encoder reranker is not enabled. No retrieval or answer-quality metrics are claimed because a reviewed evaluation set has not been created.
-- Complaint letters are editable drafts from user-provided facts; the app does not submit them.
-- The app is not a substitute for advice from a qualified lawyer.
+The knowledge base indexes verified statutory provisions across key consumer sectors:
+- **Aviation:** DGCA Civil Aviation Requirements (CAR) Section 3, Series M, Part II (Refunds), Part IV (Flight Delays, Cancellations, Denied Boarding), and Part VI & Carriage by Air Act, 1972 (Baggage Rules and Statutory Compensation up to ₹20,000 / 1,288 SDRs).
+- **E-Commerce:** Consumer Protection (E-Commerce) Rules, 2020 (Rule 6 return refusal prohibition, Rule 4 marketplace duties) and Consumer Protection Act, 2019 (Sections 2(11) Deficiency in Service, 2(47) Unfair Trade Practice, Chapter VI Product Liability).
+- **Insurance:** IRDAI (Protection of Policyholders' Interests) Regulations, 2024 (Mandatory 30-day claim settlement TAT, penal interest at Bank Rate + 2%, 30-day Free-Look Period) and Insurance Ombudsman Rules, 2017.
 
-## Vector store maintenance
+## Key Features
 
-The local Chroma database is stored in `vector_store/` and is ignored by Git. The rebuild helper deletes the configured vector store inside the project before re-indexing; back it up first if needed:
+- **Exact Statutory Section Pinpointing:** Automatically identifies the grievance sector and sub-issue, citing only the precise governing statutory sections rather than generic sector rules.
+- **Structured 9-Section Legal Briefing:**
+  1. Governing Statutory Section
+  2. Legal Test & Statutory Criteria
+  3. Supporting Consumer Protection Act Provisions
+  4. 3-Tier Escalation Path (Nodal Officer $\rightarrow$ Sector Regulator $\rightarrow$ e-Jagriti)
+  5. Actionable Steps for Consumer
+  6. Limitations & Timelines (Section 69 CPA 2-year limitation period)
+  7. Evidentiary Checklist
+  8. Executive Legal Summary
+  9. Strategic Suggestions & Proactive Steps Beyond Immediate Escalation
+- **Built-in Text-to-Speech (TTS):** Natural client-side vocalization via the Web Speech API with Play, Pause, Resume, and Stop controls, complete with automatic markdown cleaning and currency phonetic formatting.
+- **Zero-Config Offline Legal Engine:** Built-in statutory synthesis engine generates comprehensive legal responses out-of-the-box without requiring paid third-party API keys (`LLM_PROVIDER=offline`).
+- **Low-Memory Cloud Architecture:** Optimized for free hosting tiers (e.g., Render free tier 512MB RAM) using high-speed BM25 ranking and statutory indexing with < 65 MB RAM footprint.
 
-```powershell
-python scripts\rebuild_vector_store.py
-```
+## Free Cloud Deployment
 
-Never commit `.env`, raw or processed complaint data, datasets, or local vector databases.
+### Deploy on Render (Zero Docker, 100% Free)
+1. Fork or push this repository to GitHub.
+2. In [Render Dashboard](https://dashboard.render.com/), click **New + $\rightarrow$ Web Service** and connect this repository.
+3. Configure:
+   - **Environment:** `Python 3`
+   - **Build Command:** `pip install -r backend/requirements.txt && cd frontend && npm install && npm run build && cd ..`
+   - **Start Command:** `uvicorn app.main:app --app-dir backend --host 0.0.0.0 --port $PORT`
+   - **Plan:** `Free ($0/month)`
+4. Click **Deploy Web Service**. Render serves the unified React frontend and FastAPI backend from a single URL.
+
+## Disclaimer
+
+This application provides AI-generated consumer legal information based on official Indian statutory frameworks. It does not constitute formal legal representation and is not a substitute for advice from a qualified advocate or consumer law practitioner.

@@ -3,6 +3,7 @@ import os, re, logging
 from pathlib import Path
 from typing import Any, Literal
 from functools import lru_cache
+from contextlib import asynccontextmanager
 import httpx
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
@@ -13,10 +14,30 @@ logging.basicConfig(level=os.getenv("LOG_LEVEL", "INFO"))
 load_dotenv(Path(__file__).resolve().parents[2] / ".env")
 log = logging.getLogger("consumer-law-rag")
 
+
+def ensure_vector_store():
+    db = Path(os.getenv("CHROMA_PATH", "./vector_store"))
+    if not db.exists() or not (db / "chroma.sqlite3").exists():
+        log.info("Vector store not found. Building verified legal frameworks...")
+        try:
+            from scripts.ingest_legal_frameworks import ingest
+            ingest()
+            log.info("Vector store built successfully.")
+        except Exception as e:
+            log.warning(f"Could not auto-ingest vector store: {e}")
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    ensure_vector_store()
+    yield
+
+
 app = FastAPI(
     title="Consumer Rights AI",
     version="0.3.0",
-    description="Evidence-grounded consumer law information with domain routing and exact statutory section pinpointing"
+    description="Evidence-grounded consumer law information with domain routing and exact statutory section pinpointing",
+    lifespan=lifespan
 )
 
 cors_env = os.getenv("CORS_ORIGINS", "*")
@@ -1356,23 +1377,6 @@ def source(document_id: str):
         raise
     except Exception:
         raise HTTPException(503, "Source registry is unavailable.")
-
-
-def ensure_vector_store():
-    db = Path(os.getenv("CHROMA_PATH", "./vector_store"))
-    if not db.exists() or not (db / "chroma.sqlite3").exists():
-        log.info("Vector store not found. Building verified legal frameworks...")
-        try:
-            from scripts.ingest_legal_frameworks import ingest
-            ingest()
-            log.info("Vector store built successfully.")
-        except Exception as e:
-            log.warning(f"Could not auto-ingest vector store: {e}")
-
-
-@app.on_event("startup")
-def on_startup():
-    ensure_vector_store()
 
 
 # Mount frontend production build if available
