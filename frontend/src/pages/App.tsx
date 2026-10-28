@@ -252,13 +252,22 @@ export default function App() {
           history: messages.map(m => ({ role: m.role, content: m.text })),
         }),
       });
+      if (!r.ok) {
+        let errDetail = '';
+        try {
+          const errData = await r.json();
+          errDetail = errData.detail || errData.message || '';
+        } catch {
+          errDetail = await r.text();
+        }
+        throw new Error(errDetail || `Server error (HTTP ${r.status})`);
+      }
       const data = await r.json();
-      if (!r.ok) throw new Error(data.detail || 'The service could not answer.');
       setMessages([...next, { role: 'assistant', text: data.answer, citations: data.citations || [] }]);
     } catch (e) {
       const msg = e instanceof Error ? e.message : 'Could not connect to the API.';
-      if (msg.toLowerCase().includes('failed to fetch')) {
-        setError('Unable to reach server. If using Render free tier, the server may be waking up from sleep (takes ~30-50s) — please wait a moment and try again.');
+      if (msg.includes('Unexpected end of JSON input') || msg.toLowerCase().includes('failed to fetch')) {
+        setError('Server is currently processing or waking up (~30-50s). Please wait a moment and try again.');
       } else {
         setError(msg);
       }
@@ -275,13 +284,22 @@ export default function App() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ details }),
       });
+      if (!r.ok) {
+        let errDetail = '';
+        try {
+          const errData = await r.json();
+          errDetail = errData.detail || errData.message || '';
+        } catch {
+          errDetail = await r.text();
+        }
+        throw new Error(errDetail || `Draft generation failed (HTTP ${r.status})`);
+      }
       const d = await r.json();
-      if (!r.ok) throw new Error(d.detail || 'Draft generation failed.');
       setDraft(d.draft);
       setShowDraft(true);
     } catch (e) {
       const msg = e instanceof Error ? e.message : 'Draft generation failed.';
-      if (msg.toLowerCase().includes('failed to fetch')) {
+      if (msg.includes('Unexpected end of JSON input') || msg.toLowerCase().includes('failed to fetch')) {
         setError('Unable to reach server. Please wait a moment while the server wakes up and try again.');
       } else {
         setError(msg);

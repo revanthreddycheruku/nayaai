@@ -277,7 +277,8 @@ def _execute_hybrid_retrieval(
     allowed_domains: list[str],
     k: int = 6
 ) -> list[dict[str, Any]]:
-    """Execute domain-filtered hybrid retrieval (Semantic vector search + BM25 keyword search + RRF)."""
+    """Execute domain-filtered hybrid retrieval (Semantic vector search + BM25 keyword search + RRF).
+    Optimized for low-memory cloud runtimes (e.g. Render 512MB free tier) with safe neural fallback."""
     if len(allowed_domains) == 1:
         where_filter = {"domain": allowed_domains[0]}
     else:
@@ -289,13 +290,22 @@ def _execute_hybrid_retrieval(
         return []
 
     n_results = min(max(k * 4, 16), len(doc_ids))
-    q_emb = embedder().encode([query], normalize_embeddings=True).tolist()
-    semantic = collection.query(
-        query_embeddings=q_emb,
-        n_results=n_results,
-        where=where_filter,
-        include=["documents", "metadatas", "distances"]
-    )
+    semantic_ids = []
+
+    # Only run heavy PyTorch neural embeddings if explicitly enabled, preventing Render 512MB OOM crashes
+    enable_neural = os.getenv("ENABLE_NEURAL_EMBEDDINGS", "false").lower() in ("true", "1")
+    if enable_neural:
+        try:
+            q_emb = embedder().encode([query], normalize_embeddings=True).tolist()
+            semantic = collection.query(
+                query_embeddings=q_emb,
+                n_results=n_results,
+                where=where_filter,
+                include=["documents", "metadatas", "distances"]
+            )
+            semantic_ids = semantic.get("ids", [[]])[0]
+        except Exception as e:
+            log.warning(f"Neural embeddings bypassed ({e}); using high-speed statutory BM25 ranking.")
 
     from rank_bm25 import BM25Okapi
     tokenized = [re.findall(r"[a-z0-9]+", text.lower()) for text in domain_corpus.get("documents", [])]
@@ -309,7 +319,6 @@ def _execute_hybrid_retrieval(
     byid = {}
     metas = domain_corpus.get("metadatas", [])
     docs = domain_corpus.get("documents", [])
-    semantic_ids = semantic.get("ids", [[]])[0]
 
     for rank, i in enumerate(semantic_ids, 1):
         j = doc_ids.index(i) if i in doc_ids else -1
@@ -322,6 +331,11 @@ def _execute_hybrid_retrieval(
         ident = doc_ids[j]
         if ident not in byid:
             byid[ident] = (1 / (60 + r), dict(metas[j] or {}), docs[j])
+
+    # If no direct keyword hits matched, fallback to top domain statute documents
+    if not byid:
+        for j, ident in enumerate(doc_ids[:k]):
+            byid[ident] = (1 / (60 + j + 1), dict(metas[j] or {}), docs[j])
 
     found = []
     for score, meta, text in sorted(byid.values(), key=lambda x: x[0], reverse=True)[:k]:
