@@ -7,6 +7,10 @@ declare global {
       stop?: () => void;
       isSpeaking?: () => boolean;
     };
+    AppInventor?: {
+      setWebViewString: (text: string) => void;
+      getWebViewString?: () => string;
+    };
   }
 }
 
@@ -149,6 +153,21 @@ function getPreferredVoice(): SpeechSynthesisVoice | null {
   const voices = window.speechSynthesis.getVoices();
   if (!voices.length) return null;
 
+  const isAndroid = typeof navigator !== 'undefined' && /Android/i.test(navigator.userAgent);
+
+  if (isAndroid) {
+    // On Android, prefer local offline Indian English or English voice.
+    // Remote/network voices often fail silently or produce no audio.
+    const localEnIn = voices.find(v => v.lang.toLowerCase() === 'en-in' && v.localService);
+    if (localEnIn) return localEnIn;
+    const localEn = voices.find(v => v.lang.toLowerCase().startsWith('en') && v.localService);
+    if (localEn) return localEn;
+    const anyEnIn = voices.find(v => v.lang.toLowerCase() === 'en-in');
+    if (anyEnIn) return anyEnIn;
+    // Returning null allows Android to use the device's default system voice with utt.lang = 'en-IN'
+    return null;
+  }
+
   return (
     voices.find(v => v.lang.toLowerCase() === 'en-in') ||
     voices.find(v => v.lang.toLowerCase().startsWith('en') && (v.name.includes('Natural') || v.name.includes('Neural') || v.name.includes('Online'))) ||
@@ -171,22 +190,57 @@ export default function App() {
   const [speakingIndex, setSpeakingIndex] = useState<number | null>(null);
   const [isPaused, setIsPaused] = useState(false);
   const activeIndexRef = useRef<number | null>(null);
+  const currentUtteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
+  const chunksRef = useRef<string[]>([]);
+  const chunkIndexRef = useRef<number>(0);
+  const keepAliveTimerRef = useRef<number | null>(null);
+
+  function clearKeepAlive() {
+    if (keepAliveTimerRef.current !== null) {
+      clearInterval(keepAliveTimerRef.current);
+      keepAliveTimerRef.current = null;
+    }
+  }
 
   useEffect(() => {
     if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-      window.speechSynthesis.getVoices();
-      const onVoices = () => {
+      try {
         window.speechSynthesis.getVoices();
-      };
-      window.speechSynthesis.onvoiceschanged = onVoices;
-      return () => {
-        window.speechSynthesis.cancel();
-        window.speechSynthesis.onvoiceschanged = null;
-      };
+        const onVoices = () => {
+          window.speechSynthesis.getVoices();
+        };
+        window.speechSynthesis.onvoiceschanged = onVoices;
+      } catch (e) {
+        console.warn('SpeechSynthesis init error:', e);
+      }
     }
+    return () => {
+      clearKeepAlive();
+      if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+        try {
+          window.speechSynthesis.cancel();
+          window.speechSynthesis.onvoiceschanged = null;
+        } catch {}
+      }
+    };
   }, []);
 
   function stopSpeech() {
+    clearKeepAlive();
+    currentUtteranceRef.current = null;
+    chunksRef.current = [];
+    chunkIndexRef.current = 0;
+
+    // 1. MIT App Inventor WebViewer bridge
+    if (typeof window !== 'undefined' && window.AppInventor && typeof window.AppInventor.setWebViewString === 'function') {
+      try {
+        window.AppInventor.setWebViewString('__STOP__');
+      } catch (e) {
+        console.warn('AppInventor stop failed:', e);
+      }
+    }
+
+    // 2. Android native WebView bridge
     const androidTTS = getAndroidTTS();
     if (androidTTS && typeof androidTTS.stop === 'function') {
       try {
@@ -196,6 +250,7 @@ export default function App() {
       }
     }
 
+    // 3. Browser SpeechSynthesis
     if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
       try {
         window.speechSynthesis.cancel();
@@ -211,26 +266,35 @@ export default function App() {
 
   function speak(index: number, rawText: string) {
     const androidTTS = getAndroidTTS();
+    const isAppInventor = typeof window !== 'undefined' && Boolean(window.AppInventor && typeof window.AppInventor.setWebViewString === 'function');
     const hasBrowserSpeech = typeof window !== 'undefined' && 'speechSynthesis' in window;
 
-    if (!androidTTS && !hasBrowserSpeech) {
+    if (!androidTTS && !isAppInventor && !hasBrowserSpeech) {
       alert('Text-to-speech is not supported on this device/browser.');
       return;
     }
 
-    // Toggle pause / resume if the same message is already speaking (Browser Speech)
+    // Toggle pause / resume if the same message is already speaking
     if (speakingIndex === index) {
-      if (androidTTS) {
+      if (androidTTS || isAppInventor) {
         stopSpeech();
         return;
       }
       if (hasBrowserSpeech) {
         if (isPaused) {
-          window.speechSynthesis.resume();
-          setIsPaused(false);
+          try {
+            window.speechSynthesis.resume();
+            setIsPaused(false);
+          } catch (e) {
+            console.warn('speechSynthesis resume failed:', e);
+          }
         } else {
-          window.speechSynthesis.pause();
-          setIsPaused(true);
+          try {
+            window.speechSynthesis.pause();
+            setIsPaused(true);
+          } catch (e) {
+            console.warn('speechSynthesis pause failed:', e);
+          }
         }
         return;
       }
@@ -245,57 +309,116 @@ export default function App() {
     setIsPaused(false);
     activeIndexRef.current = index;
 
-    // Use Android Native TTS if running inside Android WebView with bridge
+    // 1. MIT App Inventor WebViewer
+    if (isAppInventor && window.AppInventor) {
+      try {
+        window.AppInventor.setWebViewString(cleaned);
+        return;
+      } catch (e) {
+        console.warn('AppInventor setWebViewString error:', e);
+      }
+    }
+
+    // 2. Android native WebView bridge
     if (androidTTS && typeof androidTTS.speak === 'function') {
       try {
         androidTTS.speak(cleaned);
+        return;
       } catch (e) {
         console.warn('AndroidTTS speak error, trying browser synthesis:', e);
-        if (hasBrowserSpeech) {
-          speakWithBrowser(index, cleaned);
-        }
       }
-      return;
     }
 
-    // Otherwise use standard Web Speech API
+    // 3. Browser Web Speech API (Chrome on Android, Desktop, etc.)
     if (hasBrowserSpeech) {
       speakWithBrowser(index, cleaned);
     }
   }
 
   function speakWithBrowser(index: number, cleaned: string) {
-    const chunks = splitTextIntoChunks(cleaned);
+    if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
+
+    try {
+      window.speechSynthesis.cancel();
+      // Crucial for Android: resume awakens the speech engine
+      window.speechSynthesis.resume();
+    } catch {}
+
+    const chunks = splitTextIntoChunks(cleaned, 160);
+    chunksRef.current = chunks;
+    chunkIndexRef.current = 0;
+    activeIndexRef.current = index;
+
     const voice = getPreferredVoice();
 
-    chunks.forEach((chunk, chunkIdx) => {
-      const utt = new SpeechSynthesisUtterance(chunk);
+    function playChunk(idx: number) {
+      if (activeIndexRef.current !== index) return;
+      if (idx >= chunksRef.current.length) {
+        stopSpeech();
+        return;
+      }
+
+      const text = chunksRef.current[idx];
+      const utt = new SpeechSynthesisUtterance(text);
+      // Retain utterance in ref so Android V8 garbage collection does not destroy it mid-speech!
+      currentUtteranceRef.current = utt;
+
+      utt.lang = 'en-IN';
       utt.rate = 1.0;
       utt.pitch = 1.0;
-      if (voice) utt.voice = voice;
-
-      if (chunkIdx === chunks.length - 1) {
-        utt.onend = () => {
-          if (activeIndexRef.current === index) {
-            setSpeakingIndex(null);
-            setIsPaused(false);
-            activeIndexRef.current = null;
-          }
-        };
+      utt.volume = 1.0;
+      if (voice) {
+        utt.voice = voice;
       }
+
+      utt.onstart = () => {
+        // Keep-alive timer for Android Chrome which suspends long utterances after 10-15s
+        clearKeepAlive();
+        keepAliveTimerRef.current = window.setInterval(() => {
+          if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+            if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
+              window.speechSynthesis.pause();
+              window.speechSynthesis.resume();
+            }
+          }
+        }, 10000);
+      };
+
+      utt.onend = () => {
+        if (activeIndexRef.current === index) {
+          const nextIdx = idx + 1;
+          chunkIndexRef.current = nextIdx;
+          playChunk(nextIdx);
+        }
+      };
 
       utt.onerror = (e) => {
         if (e.error !== 'canceled' && e.error !== 'interrupted') {
+          console.warn('SpeechSynthesis chunk error:', e.error);
           if (activeIndexRef.current === index) {
-            setSpeakingIndex(null);
-            setIsPaused(false);
-            activeIndexRef.current = null;
+            const nextIdx = idx + 1;
+            chunkIndexRef.current = nextIdx;
+            if (nextIdx < chunksRef.current.length) {
+              playChunk(nextIdx);
+            } else {
+              stopSpeech();
+            }
           }
         }
       };
 
-      window.speechSynthesis.speak(utt);
-    });
+      try {
+        window.speechSynthesis.speak(utt);
+        if (window.speechSynthesis.paused) {
+          window.speechSynthesis.resume();
+        }
+      } catch (err) {
+        console.warn('window.speechSynthesis.speak error:', err);
+        stopSpeech();
+      }
+    }
+
+    playChunk(0);
   }
 
   async function send(text = input) {
@@ -377,8 +500,10 @@ export default function App() {
     setError('');
   }
 
-  const supportsTts = typeof window !== 'undefined' && (Boolean(getAndroidTTS()) || 'speechSynthesis' in window);
-  const isAndroid = Boolean(getAndroidTTS());
+  const isAppInventor = typeof window !== 'undefined' && Boolean(window.AppInventor && typeof window.AppInventor.setWebViewString === 'function');
+  const isAndroidBridge = Boolean(getAndroidTTS());
+  const isNativeWrapper = isAndroidBridge || isAppInventor;
+  const supportsTts = isNativeWrapper || (typeof window !== 'undefined' && 'speechSynthesis' in window);
 
   return (
     <main className="shell">
@@ -418,7 +543,7 @@ export default function App() {
                   <div className="tts-controls">
                     {speakingIndex === i ? (
                       <>
-                        {!isAndroid && (
+                        {!isNativeWrapper && (
                           <button
                             type="button"
                             className={`tts-btn ${!isPaused ? 'playing' : 'paused'}`}
